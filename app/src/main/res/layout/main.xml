@@ -7,10 +7,18 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ua.com.senseye.schultetableapplication.MainActivity">
+    tools:context="ua.com.senseye.schultetableapplication.MainActivity"
+    android:background="@color/colorPrimaryDark">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Let&apos;s play"
+        android:background="@color/abc_primary_text_disable_only_material_dark"
+        android:textColor="@android:color/white"
+        android:clickable="false"
+        android:textSize="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="95dp" />
 </RelativeLayout>
