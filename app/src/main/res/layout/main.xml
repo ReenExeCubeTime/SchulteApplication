@@ -10,6 +10,16 @@
     tools:context="ua.com.senseye.schultetableapplication.MainActivity"
     android:background="@color/colorPrimaryDark">
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click Me"
+        android:id="@+id/button"
+        android:layout_below="@+id/welcome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:clickable="true" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,4 +32,5 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="95dp"
         android:id="@+id/welcome" />
+
 </RelativeLayout>
