@@ -35,6 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void initializeButtonList() {
         buttonList.add(findViewById(R.id.button1));
         buttonList.add(findViewById(R.id.button2));
-        buttonList.add(findViewById(getResources().getIdentifier("button1", "id", getPackageName())));
+        buttonList.add(findViewById(getResources().getIdentifier("button3", "id", getPackageName())));
     }
 }
