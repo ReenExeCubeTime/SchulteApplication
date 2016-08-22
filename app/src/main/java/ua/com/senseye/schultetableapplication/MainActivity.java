@@ -27,11 +27,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        Button button = (Button) buttonList.get(1);
 
+        button.setText("Center");
     }
 
     private void initializeButtonList() {
         buttonList.add(findViewById(R.id.button1));
         buttonList.add(findViewById(R.id.button2));
+        buttonList.add(findViewById(getResources().getIdentifier("button1", "id", getPackageName())));
     }
 }
