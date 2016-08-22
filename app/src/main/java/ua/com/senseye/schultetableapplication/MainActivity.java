@@ -6,17 +6,19 @@ import android.view.View;
 import android.widget.Button;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ArrayList buttonList = new ArrayList<Button>();
+    private ArrayList cellList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        initializeButtonList();
+        initialize();
 
         int size = buttonList.size();
         for (int i = 0; i < size; ++i) {
@@ -27,16 +29,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Button button = (Button) buttonList.get(1);
+        Button button = (Button) findViewById(v.getId());
 
-        button.setText("Center");
+        button.setEnabled(false);
     }
 
-    private void initializeButtonList() {
+    private void initialize() {
         String prefix = "button";
 
-        for (int i = 0; i < 25; ++i) {
-            buttonList.add(findViewById(getResources().getIdentifier(prefix + Integer.toString(i + 1), "id", getPackageName())));
+        for (int i = 1; i <= 25; ++i) {
+            cellList.add(i);
+            buttonList.add(findViewById(getResources().getIdentifier(prefix + Integer.toString(i), "id", getPackageName())));
+        }
+
+        Collections.shuffle(cellList);
+
+        for (int i = 0; i <= 0; ++i) {
+            Button button = (Button) buttonList.get(i);
+            button.setText(Integer.toString((int)cellList.get(i)));
         }
     }
 }
