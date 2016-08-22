@@ -5,22 +5,33 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
-    private Button button;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private ArrayList buttonList = new ArrayList<Button>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        button = (Button) findViewById(R.id.button1);
+        initializeButtonList();
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                button.setText("A");
-            }
-        });
+        int size = buttonList.size();
+        for (int i = 0; i < size; i++) {
+            Button button = (Button) buttonList.get(i);
+            button.setOnClickListener(this);
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    private void initializeButtonList() {
+        buttonList.add(findViewById(R.id.button1));
+        buttonList.add(findViewById(R.id.button2));
     }
 }
