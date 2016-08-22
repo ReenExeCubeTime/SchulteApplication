@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (current == END) {
                 restart();
+            } else {
+                ++current;
             }
-
-            ++current;
         }
     }
 
