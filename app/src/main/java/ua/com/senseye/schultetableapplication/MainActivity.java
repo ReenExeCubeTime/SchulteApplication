@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initializeButtonList();
 
         int size = buttonList.size();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; ++i) {
             Button button = (Button) buttonList.get(i);
             button.setOnClickListener(this);
         }
@@ -33,8 +33,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initializeButtonList() {
-        buttonList.add(findViewById(R.id.button1));
-        buttonList.add(findViewById(R.id.button2));
-        buttonList.add(findViewById(getResources().getIdentifier("button3", "id", getPackageName())));
+        String prefix = "button";
+
+        for (int i = 0; i < 25; ++i) {
+            buttonList.add(findViewById(getResources().getIdentifier(prefix + Integer.toString(i + 1), "id", getPackageName())));
+        }
     }
 }
